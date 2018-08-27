@@ -65,7 +65,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 ###R Script
 
 
-####Set system environment 
+#### Set system environment 
 	Sys.setenv(SPARK_HOME="/usr/lib/spark")
 	config <- list() 
 
@@ -83,13 +83,13 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 	library(ggplot2)
 
 
-####Install spark and connect to R
+#### Install spark and connect to R
 Make sure your EMR cluster spark version is 2.1.0 .
 
 	sc <- spark_connect(master = "yarn-client", config = config, version = '2.1.0')
 
 
-####Read data from S3 public bucket and write  Parquet files to HDF
+#### Read data from S3 public bucket and write  Parquet files to HDF
 (Parquet is a high performance column storage file format, which is better than CSV file, it can query data quickly.)
 	Wine <- fread('https://s3.amazonaws.com/ecv-training-jj-v/wineQualityWhites.csv')
 
@@ -103,7 +103,7 @@ Make sure your EMR cluster spark version is 2.1.0 .
 
 
 
-####Prepare training and testing data
+#### Prepare training and testing data
  
 Transform our data set, and then partition into 'training' and 'test'.
 
@@ -112,26 +112,26 @@ Transform our data set, and then partition into 'training' and 'test'.
 
 
 
-###Build machine learning models
+### Build machine learning models
 
 	ml_formula <- formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + residual_sugar + chlorides + free_sulfur_dioxide+total_sulfur_dioxide+ density + pH + sulphates + alcohol)
 
 
-####Linear Model
+#### Linear Model
 	ml_lm <- Wine_partitions$train %>%
 	  ml_linear_regression(ml_formula)
-####Random Forest
+#### Random Forest
 	ml_rf <- Wine_partitions$train %>%
 	  ml_random_forest_classifier(ml_formula)
-####Naive Bayes
+#### Naive Bayes
 	ml_nb <- Wine_partitions$train %>%
 	  ml_naive_bayes(ml_formula)
-####Desision Tree
+#### Desision Tree
 	ml_dt <-  Wine_partitions$train %>%
 	  ml_decision_tree(ml_formula)
 
 
-####Feature Importance
+#### Feature Importance
 	ml_models <- list(
 	  "Linear" = ml_lm,
 	  "Decision Tree" = ml_dt,
@@ -157,7 +157,7 @@ Transform our data set, and then partition into 'training' and 'test'.
 	  theme(legend.position = "none")
 
 
-####Model Comparison
+#### Model Comparison
 
 
 	n <- 10
@@ -203,7 +203,7 @@ Transform our data set, and then partition into 'training' and 'test'.
                                 
 
 
-####Save R.data
+#### Save R.data
 In order to present the result to R flexdashboard, we save the data directly.  
 	save(feature_importance,Wine,Wine_tbl,ml_dt, ml_nb, ml_rf, ml_lm, file = '/home/rstudio-user/result.Rdata')
 
@@ -214,18 +214,18 @@ Copy to S3:
 
 
 
-###Present analysis result to web dashboard
+### Present analysis result to web dashboard
 
 In order to save some cost, this session you don't have to run on AWS EMR.
 
 
-####Install required packages:
+#### Install required packages:
 
 	install.packages("flexdashboard")
 	install.packages("markdown")
 
 
-####R Markdown:
+#### R Markdown:
 
 1. Create a new R Markdown script:
 
@@ -246,8 +246,8 @@ https://github.com/JellalYu/Sparkling-water-machine-learning-with-R-AWS-EMR/blob
 5. Publish to RPubs.
 ![_1534717959271.png](./EMR_img/_1534717959271.png)
 
-
-##Conclusion
+---
+## Conclusion
 Congratulations! You now have learned how to:
 * Launch an EMR Cluster and run a simple machine learning script via spark in R.
 * Share your analytic result to Web dashboard to public R community.
