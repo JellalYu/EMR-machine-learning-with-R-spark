@@ -1,8 +1,7 @@
 # EMR machine learning with R & spark
 
-@(AWS)
 
-![1.PNG](./_1534713729402.PNG)
+![1.PNG](/_1534713729402.PNG)
 
 
 ## Senario
