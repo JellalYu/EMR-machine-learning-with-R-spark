@@ -41,17 +41,21 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 	sudo yum update
 	sudo yum install libcurl-devel openssl-devel 
 
+
 #### Install RStudio Server
 	wget -P /tmp https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-0.99.1266-x86_64.rpm
 	sudo yum install --nogpgcheck /tmp/rstudio-server-rhel-0.99.1266-x86_64.rpm
+
 
 #### Make Rstudio User
 	sudo useradd -m rstudio-user
 	sudo passwd rstudio-user
 	su rstudio-user
 
+
 #### Give permission to yarn
 	export HADOOP_USER_NAME=yarn
+
 
 #### Create new directory in HDF
 	hadoop fs -mkdir /user/rstudio-user
@@ -60,9 +64,11 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 ---
 ###R Script
 
+
 ####Set system environment 
 	Sys.setenv(SPARK_HOME="/usr/lib/spark")
 	config <- list() 
+
 
 #### Prepare packages
 
@@ -76,10 +82,12 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 	library(data.table)
 	library(ggplot2)
 
+
 ####Install spark and connect to R
 Make sure your EMR cluster spark version is 2.1.0 .
 
 	sc <- spark_connect(master = "yarn-client", config = config, version = '2.1.0')
+
 
 ####Read data from S3 public bucket and write  Parquet files to HDF
 (Parquet is a high performance column storage file format, which is better than CSV file, it can query data quickly.)
@@ -94,6 +102,7 @@ Make sure your EMR cluster spark version is 2.1.0 .
 	spark_write_parquet(Wine_tbl, path="/user/rstudio-user", mode="overwrite", partition_by = "dt")
 
 
+
 ####Prepare training and testing data
  
 Transform our data set, and then partition into 'training' and 'test'.
@@ -102,9 +111,11 @@ Transform our data set, and then partition into 'training' and 'test'.
 	  sdf_partition(training = 0.7, test = 0.3, seed = 10997)
 
 
+
 ###Build machine learning models
 
 	ml_formula <- formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + residual_sugar + chlorides + free_sulfur_dioxide+total_sulfur_dioxide+ density + pH + sulphates + alcohol)
+
 
 ####Linear Model
 	ml_lm <- Wine_partitions$train %>%
@@ -118,6 +129,7 @@ Transform our data set, and then partition into 'training' and 'test'.
 ####Desision Tree
 	ml_dt <-  Wine_partitions$train %>%
 	  ml_decision_tree(ml_formula)
+
 
 ####Feature Importance
 	ml_models <- list(
@@ -143,6 +155,7 @@ Transform our data set, and then partition into 'training' and 'test'.
 	  labs(title = "Feature importance",
        x = NULL) +
 	  theme(legend.position = "none")
+
 
 ####Model Comparison
 
@@ -189,6 +202,7 @@ Transform our data set, and then partition into 'training' and 'test'.
 
                                 
 
+
 ####Save R.data
 In order to present the result to R flexdashboard, we save the data directly.  
 	save(feature_importance,Wine,Wine_tbl,ml_dt, ml_nb, ml_rf, ml_lm, file = '/home/rstudio-user/result.Rdata')
@@ -198,14 +212,18 @@ Copy to S3:
 
 
 
+
+
 ###Present analysis result to web dashboard
 
 In order to save some cost, this session you don't have to run on AWS EMR.
+
 
 ####Install required packages:
 
 	install.packages("flexdashboard")
 	install.packages("markdown")
+
 
 ####R Markdown:
 
@@ -227,6 +245,7 @@ https://github.com/JellalYu/Sparkling-water-machine-learning-with-R-AWS-EMR/blob
 
 5. Publish to RPubs.
 ![_1534717959271.png](./EMR_img/_1534717959271.png)
+
 
 ##Conclusion
 Congratulations! You now have learned how to:
