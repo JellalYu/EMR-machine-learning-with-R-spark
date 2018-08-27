@@ -2,7 +2,7 @@
 
 @(AWS)
 
-![1.PNG](./1534713729402.PNG)
+![1.PNG](./_1534713729402.PNG)
 
 
 ## Senario
@@ -27,14 +27,14 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 3. 	Click **Go to advanced options**.
 
 4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0**.
-![1.PNG](./1534710618851.PNG)
+![1.PNG](./_1534710618851.PNG)
 
 5. 	Chose **m4.large** instanse and check the **spot** box.
 
-![1.PNG](./1534710709709.PNG)
+![1.PNG](./_1534710709709.PNG)
 
 6.	Security Options. 
-![1.PNG](./1534710942083.PNG)
+![1.PNG](./_1534710942083.PNG)
 
 ### Set Rstudio environment
 
@@ -211,20 +211,20 @@ In order to save some cost, this session you don't have to run on AWS EMR.
 ####R Markdown:
 
 1. Create a new R Markdown script:
-![1.PNG](./1534709851711.PNG)
+![1.PNG](./_1534709851711.PNG)
 
 2. Pass the following code:
 https://github.com/JellalYu/Sparkling-water-machine-learning-with-R-AWS-EMR/blob/master/flexdashboard_sparkonly.txt
 
 
 3. Type **knit** in Rstudio.
-![1.PNG](./1534711225656.PNG)
+![1.PNG](./_1534711225656.PNG)
 
 4. Type publish on upper right corner.
- ![1.PNG](./1534717691550.PNG)
+ ![1.PNG](./_1534717691550.PNG)
 
 5. Publish to RPubs.
-![1.PNG](./1534717959271.PNG)
+![1.PNG](./_1534717959271.PNG)
 
 ##Conclusion
 Congratulations! You now have learned how to:
