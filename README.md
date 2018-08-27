@@ -25,7 +25,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 3. 	Click **Go to advanced options**.
 
 4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0**.
-![1.PNG](./_1534710618851.PNG)
+![_1534710618851.png](./_1534710618851.png)
 
 5. 	Chose **m4.large** instanse and check the **spot** box.
 
