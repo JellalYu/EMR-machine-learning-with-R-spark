@@ -1,6 +1,6 @@
 # EMR machine learning with R & spark
 
-![ _1534713729402.PNG](/EMR_img/_1534713729402.PNG)
+![1534713729402.PNG](./EMR_img/_1534713729402.PNG)
 
 
 ## Senario
