@@ -3,16 +3,16 @@
 ![_1534713729402.png](./EMR_img/_1534713729402.png)
 
 
-## Senario
+## Scenario
 
 When researchers train machine learning or deep learning models, huge amounts of data and multilayer algorithms make the model training slow.
 AWS EMR services combine with Spark based memory processing architecture that allows users to do this work in a very short time. 
-This experiment mainly lead you to use the R studio in AWS EMR services and Spark to train several machine learning models and to present the results by R flexdachboard package.
+This experiment mainly leads you to use the R studio in AWS EMR services and Spark to train several machine learning models and to present the results by R flexdachboard package.
 
 
 ## Prerequisites
 
-Make sure your are in US East (N. Virginia), which short name is us-east-1.
+Make sure you are in US East (N. Virginia), which short name is us-east-1.
 
 Download Putty and PuTTYgen: IF you don’t already have the **PuTTy client/PuTTYgen** installed on your machine, you can download and then launch it from here:
 https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
@@ -27,7 +27,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0**.
 ![_1534710618851.png](./EMR_img/_1534710618851.png)
 
-5. 	Chose **m4.large** instanse and check the **spot** box.
+5. 	Chose **m4.large** instance and check the **spot** box.
 
 ![_1534710709709.png](./EMR_img/_1534710709709.png)
 
@@ -90,7 +90,7 @@ Make sure your EMR cluster spark version is 2.1.0 .
 
 
 #### Read data from S3 public bucket and write  Parquet files to HDF
-(Parquet is a high performance column storage file format, which is better than CSV file, it can query data quickly.)
+(Parquet is a high-performance column storage file format, which is better than CSV file, it can query data quickly.)
 	Wine <- fread('https://s3.amazonaws.com/ecv-training-jj-v/wineQualityWhites.csv')
 
 	Wine`$`quality<-as.factor(Wine`$`quality)
@@ -244,6 +244,7 @@ https://github.com/JellalYu/Sparkling-water-machine-learning-with-R-AWS-EMR/blob
  ![_1534717691550.png](./EMR_img/_1534717691550.png)
 
 5. Publish to RPubs.
+
 ![_1534717959271.png](./EMR_img/_1534717959271.png)
 
 ---
