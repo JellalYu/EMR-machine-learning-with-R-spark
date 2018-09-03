@@ -27,7 +27,7 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0**.
 ![_1534710618851.png](./EMR_img/_1534710618851.png)
 
-5. 	Chose **m4.large** instance and check the **spot** box.
+5. 	Choose **m4.large** instance and check the **spot** box.
 
 ![_1534710709709.png](./EMR_img/_1534710709709.png)
 
