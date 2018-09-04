@@ -124,6 +124,7 @@ Make sure your EMR cluster spark version is 2.1.0 .
 
 #### Read data from S3 public bucket and write  Parquet files to HDF
 (Parquet is a high-performance column storage file format, which is better than CSV file, it can query data quickly.)
+	
 	Wine <- fread('https://s3.amazonaws.com/ecv-training-jj-v/wineQualityWhites.csv')
 
 	Wine`$`quality<-as.factor(Wine`$`quality)
@@ -145,7 +146,7 @@ Transform our data set, and then partition into 'training' and 'test'.
 
 
 
-### Build machine learning models
+### Build some machine learning models
 
 	ml_formula <- formula(quality ~ fixed_acidity + volatile_acidity + citric_acid + residual_sugar + chlorides + free_sulfur_dioxide+total_sulfur_dioxide+ density + pH + sulphates + alcohol)
 
