@@ -123,7 +123,7 @@ Make sure your EMR cluster spark version is 2.1.0 .
 
 
 #### Read data from S3 public bucket and write  Parquet files to HDF
-(Parquet is a high-performance column storage file format, which is better than CSV file, it can query data quickly.)
+Parquet is a high-performance column storage file format, which is better than CSV file, it can query data quickly.
 	
 	Wine <- fread('https://s3.amazonaws.com/ecv-training-jj-v/wineQualityWhites.csv')
 
@@ -139,7 +139,7 @@ Make sure your EMR cluster spark version is 2.1.0 .
 
 #### Prepare training and testing data
  
-Transform our data set, and then partition into 'training' and 'test'.
+Transform our dataset, and then partition into 'training' and 'test'.
 
 	Wine_partitions <- Wine_tbl %>%
 	  sdf_partition(training = 0.7, test = 0.3, seed = 10997)
@@ -277,6 +277,7 @@ https://github.com/JellalYu/Sparkling-water-machine-learning-with-R-AWS-EMR/blob
  ![_1534717691550.png](./EMR_img/_1534717691550.png)
 
 5. Publish to RPubs.
+This is a completely free R community, where you can simply share the results of the analysis.
 
 ![_1534717959271.png](./EMR_img/_1534717959271.png)
 
