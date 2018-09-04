@@ -92,7 +92,7 @@ Choose the EMR cluster you just built and use the specified security group key p
 	hadoop fs -chmod 777 /user/rstudio-user
 
 ---
-###R Script
+### R Script
 
 
 #### Set system environment 
