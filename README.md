@@ -14,11 +14,17 @@ This experiment mainly leads you to use the R studio in AWS EMR services and Spa
 
 Make sure you are in US East (N. Virginia), which short name is us-east-1.
 
-Download Putty and PuTTYgen: IF you don’t already have the **PuTTy client/PuTTYgen** installed on your machine, you can download and then launch it from here:
+Download Putty and PuTTYgen: IF you don’t already have the **PuTTy client/PuTTYgen** installed on your local machine, you can download and then launch it from here:
 https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-### Launch an EMR cluster
-1. In the **AWS Management Console**, on the **service** menu, click **EMR**.
+
+### Create Security Group
+In this section, we first create a network security environment that can only be open to R.
+
+
+
+### Launch EMR cluster
+1. 	In the **AWS Management Console**, on the **service** menu, click **EMR**.
 
 2. 	Click **Create Cluster**.
 
@@ -35,13 +41,14 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 7.	In Security Options page. Select the **key pair** you have. In permissions, select **Custom** and change EC2 instance profile to **mylab_EMR_role**
 
-8. Type **Create cluster**, it may take some time to launch a EMR cluster. If the status is waiting to indicate that you have successfully enabled E
-
-
-
 ![_1534710942083.png](./EMR_img/_1534710942083.png)
 
+
+8. Type **Create cluster**, it may take some time to launch a EMR cluster. If the status is "waiting", it means you have successfully opened.
+
+
 ### Set Rstudio environment
+Choose the EMR cluster you just built and use the specified security group key pair (.pem key) to open **Master public DNS** of EMR cluster.
 
 #### Update
 	sudo yum update
