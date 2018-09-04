@@ -48,7 +48,7 @@ In this section, we first create a network security environment that can only be
 3. 	Click **Go to advanced options**.
 
 4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0** and check the box **Spark2.1.0**. Then **Next**.
-![inbound_rule.png](./EMR_img/inbound_rule.png)
+![_1534710618851.png](./EMR_img/_1534710618851.png)
 
 5. 	Choose **m4.large** instance and check the **spot** box. Then **Next**.
 
