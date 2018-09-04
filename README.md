@@ -65,7 +65,7 @@ In this section, we first create a network security environment that can only be
 
 
 ### Set Rstudio environment
-Choose the EMR cluster you just built and use the specified security group key pair (.pem key) to open **Master public DNS** of EMR cluster.
+Choose the EMR cluster you just built and use the specified security group key pair (.pem key) to connect **Master public DNS** of EMR cluster via SSH.
 
 #### Update
 	sudo yum update
@@ -88,6 +88,9 @@ Choose the EMR cluster you just built and use the specified security group key p
 
 
 #### Create new directory in HDF
+	
+HDF (Hierarchical Data Format) is a file format and corresponding library files designed for storing and processing large volume scientific data.
+
 	hadoop fs -mkdir /user/rstudio-user
 	hadoop fs -chmod 777 /user/rstudio-user
 
@@ -234,19 +237,18 @@ Transform our data set, and then partition into 'training' and 'test'.
 
 
 #### Save R.data
-In order to present the result to R flexdashboard, we save the data directly.  
+In order to present the result to R flexdashboard, we save the data directly. Firstly, run R script below: 
+
 	save(feature_importance,Wine,Wine_tbl,ml_dt, ml_nb, ml_rf, ml_lm, file = '/home/rstudio-user/result.Rdata')
 
-Copy to S3: 
-	aws s3 cp /home/rstudio-user/result.Rdata s3://ecv-training-jj-v
+Copy the result to S3 use aws CLI: 
 
-
-
+	aws s3 cp /home/rstudio-user/result.Rdata s3://[your bucket name]
 
 
 ### Present analysis result to web dashboard
 
-In order to save some cost, this session you don't have to run on AWS EMR.
+To save some cost, this session you don't have to run on AWS EMR. You can run on your local and share it with the public R community
 
 
 #### Install required packages:
