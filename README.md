@@ -56,7 +56,7 @@ In this section, we first create a network security environment that can only be
 
 6.	In General Options page, type Cluster name as **My cluster**, and choose the S3 bucket you want to store log information. Then **Next**.
 
-7.	In Security Options page. Select the **key pair** you have. In permissions, select **Custom** and change EC2 instance profile to **mylab_EMR_role**
+7.	In Security Options page. Select the **key pair** and **EMR security group** you created. In permissions, select **Custom** and change EC2 instance profile to **mylab_EMR_role**.
 
 ![_1534710942083.png](./EMR_img/_1534710942083.png)
 
