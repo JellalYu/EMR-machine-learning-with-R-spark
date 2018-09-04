@@ -20,7 +20,24 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 ### Create Security Group
 In this section, we first create a network security environment that can only be open to R.
+1.	On the **Services** menu, click **EC2**.
 
+2.	In the navigation pane, click **Security Groups**.
+
+3.	Click **Create Security Group**.
+
+4.	In the **Create Security Group** dialog box, configure the security group with the following values:
+
+* security Group Name: EMR Security Group
+* Description: Security for the EMR
+* VPC: No VPC
+
+5.	In Security group rules, select **Inbound** and **Add Rule**. Configure the access rule with the following values:
+
+![_1534710618851.png](./EMR_img/_1534710618851.png)
+
+
+6.	Click **Create**
 
 
 ### Launch EMR cluster
@@ -31,7 +48,7 @@ In this section, we first create a network security environment that can only be
 3. 	Click **Go to advanced options**.
 
 4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0** and check the box **Spark2.1.0**. Then **Next**.
-![_1534710618851.png](./EMR_img/_1534710618851.png)
+![inbound_rule.png](./EMR_img/inbound_rule.png)
 
 5. 	Choose **m4.large** instance and check the **spot** box. Then **Next**.
 
