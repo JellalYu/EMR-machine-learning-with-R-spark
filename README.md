@@ -24,14 +24,20 @@ https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 3. 	Click **Go to advanced options**.
 
-4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0**.
+4. 	In Step1: Software and Steps: for Release, choose **EMR 5.3.0** and check the box **Spark2.1.0**. Then **Next**.
 ![_1534710618851.png](./EMR_img/_1534710618851.png)
 
-5. 	Choose **m4.large** instance and check the **spot** box.
+5. 	Choose **m4.large** instance and check the **spot** box. Then **Next**.
 
 ![_1534710709709.png](./EMR_img/_1534710709709.png)
 
-6.	Security Options. 
+6.	In General Options page, type Cluster name as **My cluster**, and choose the S3 bucket you want to store log information. Then **Next**.
+
+7.	In Security Options page. Select the **key pair** you have. In permissions, select **Custom** and change EC2 instance profile to **mylab_EMR_role**
+
+8. Type **Create cluster**, it may take some time to launch a EMR cluster. If the status is waiting to indicate that you have successfully enabled E
+
+
 
 ![_1534710942083.png](./EMR_img/_1534710942083.png)
 
