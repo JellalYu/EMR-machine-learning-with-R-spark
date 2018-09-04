@@ -34,7 +34,7 @@ In this section, we first create a network security environment that can only be
 
 5.	In Security group rules, select **Inbound** and **Add Rule**. Configure the access rule with the following values:
 
-![_1534710618851.png](./EMR_img/_1534710618851.png)
+![inbound_rule.png](./EMR_img/inbound_rule.png)
 
 
 6.	Click **Create**
