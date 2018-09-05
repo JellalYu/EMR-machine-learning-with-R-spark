@@ -287,3 +287,8 @@ Congratulations! You now have learned how to:
 * Launch an EMR Cluster and run a simple machine learning script via spark in R.
 * Share your analytic result to Web dashboard to public R community.
 
+---
+## Appendix
+If your EMR_DefaultRole or EMR_EC2_DefaultRole is not valid, please refer the following url to resolve:
+https://aws.amazon.com/tw/premiumsupport/knowledge-center/emr-default-role-invalid/
+
