@@ -39,9 +39,8 @@ In this section, we first create a network security environment that can only be
 
 6.Click **Create**
 
-
-### Launch EMR cluster
 ---
+### Launch EMR cluster
 1.In the **AWS Management Console**, on the **service** menu, click **EMR**.
 
 2.Click **Create Cluster**.
@@ -64,7 +63,7 @@ In this section, we first create a network security environment that can only be
 
 8.Type **Create cluster**, it may take some time to launch a EMR cluster. If the status is "waiting", it means you have successfully opened.
 
-
+---
 ### Set Rstudio environment
 Choose the EMR cluster you just built and use the specified security group key pair (.pem key) to connect **Master public DNS** of EMR cluster via SSH.
 
@@ -237,7 +236,7 @@ Transform our dataset, and then partition into 'training' and 'test'.
 
                                 
 
-
+---
 #### Save R.data
 In order to present the result to R flexdashboard, we save the data directly. Firstly, run R script below: 
 
@@ -247,7 +246,7 @@ Copy the result to S3 use aws CLI:
 
     aws s3 cp /home/rstudio-user/result.Rdata s3://[your bucket name]
 
-
+---
 ### Present analysis result to the web dashboard
 
 To save some cost, this session you don't have to run on AWS EMR. You can run on your local and share it with the public R community
@@ -258,7 +257,7 @@ To save some cost, this session you don't have to run on AWS EMR. You can run on
     install.packages("flexdashboard")
     install.packages("markdown")
 
-
+---
 #### R Markdown:
 
 1. Create a new R Markdown script:
