@@ -17,7 +17,7 @@ Make sure you are in US East (N. Virginia), which short name is us-east-1.
 Download Putty and PuTTYgen: IF you don’t already have the **PuTTy client/PuTTYgen** installed on your local machine, you can download and then launch it from here:
 https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-
+---
 ### Create Security Group
 In this section, we first create a network security environment that can only be open to R.
 1.    On the **Services** menu, click **EC2**.
