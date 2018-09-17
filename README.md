@@ -41,6 +41,7 @@ In this section, we first create a network security environment that can only be
 
 
 ### Launch EMR cluster
+---
 1.In the **AWS Management Console**, on the **service** menu, click **EMR**.
 
 2.Click **Create Cluster**.
